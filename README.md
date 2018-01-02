@@ -1,4 +1,4 @@
-# Galton's Dice
+# Galton's Dice for Sampling from the Normal Distribution
 
 In an 1890 *Nature* article, "Dice for Statistical Experiments", Francis Galton described a method to simulate random numbers from a normal distribution using three six-sided dice.
 See the references below for a complete description of the method.
