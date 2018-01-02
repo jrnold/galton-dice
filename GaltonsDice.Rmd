@@ -1,0 +1,62 @@
+## Original Distribution
+
+The standard deviation associated with 1 probable error is the quantile such that
+$\Pr(\sigma < X < \sigma) = 0.5$.
+```{r}
+sigma <- 1 / qnorm(0.75)
+sigma
+```
+
+
+## Functions
+
+Dice 1 values:
+```{r}
+dice1_values <- function(sd = 1) {
+  p <- seq(0.5, 1, length.out = 25)
+  m <- 0.5 * (p[-1] + p[-length(p)])
+  m <- qnorm(m, mean = 0, sd = 1)
+  m[22:24] <- NA_real_
+  m
+}
+```
+
+Dice 2 values: Midpoints of the 24 quantiles from $22 / 25$ to 1.
+```{r}
+dice2_values <- function(sd = 1) {
+  p <- 0.5 + 0.5 * seq(22 / 25, 1, length.out = 25)
+  m <- 0.5 * (p[-1] + p[-length(p)])  
+  m <- m[!is.na(m)]
+  qnorm(m, mean = 0, sd = 1)
+}
+```
+
+Dice I values:
+```{r}
+matrix(round(dice1_values(sigma), 2), 6, 4)
+```
+
+
+Dice II values:
+```{r}
+matrix(round(dice2_values(sigma), 2), 6, 4)
+```
+
+
+## Standard Normal Distribution
+
+Midpoints of the first 24 segments:
+```{r}
+matrix(round(dice1_values(), 2), 6, 4)
+```
+
+Midpoints for the last three points:
+```{r}
+matrix(round(dice2_values(), 2), 6, 4)
+```
+
+
+## References
+
+- Galton, Francis. 1890. "Dice for Statistical Experiments." *Nature*. May 1, 1890. p. 13--14.
+- Stigler, Stephen M. 2002. *Statistics on the Table: The History of Statistical Concepts and Methods.* Harvard UP.
