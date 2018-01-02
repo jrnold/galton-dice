@@ -109,3 +109,4 @@ The equivalent values of dice 1 and 2 for the modern parameterization of the  st
 -   Galton, Francis. 1890. "Dice for Statistical Experiments." *Nature*. May 1, 1890. p. 13--14.
 -   Stigler, Stephen M. 2002. *Statistics on the Table: The History of Statistical Concepts and Methods.* Harvard UP.
 -   Stigler, Stephen M. "Stochastic Simulation in the Nineteenth Century." *Statistical Science* 6, no. 1 (1991): 89-97. <http://www.jstor.org/stable/2245712>.
+-   LaMaStEx, "Galton's Dice Report" <http://lamastex.org/lmse/galtons-dice/>
